@@ -1,4 +1,4 @@
-@regression
+@api @regression
 Feature: Restful Booker POST API Calls
 
   Scenario: verify status code and response body when user try create new booking

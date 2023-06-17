@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.api;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -70,9 +70,9 @@ public class ApiStepDefinition {
 	@When("I send post request with payload")
 	public void i_send_post_request_with_payload() throws StreamReadException, DatabindException, IOException {
 		ObjectMapper objectMapper = new ObjectMapper();
-		Object payLoad = objectMapper.readValue(new File("src\\test\\resources\\payload\\createBookingPayload.json"), Object.class);
+		Object payLoad = objectMapper.readValue(new File("src\\test\\resources\\datadriven\\payload\\createBookingPayload.json"), Object.class);
 		//Alternative Method
-		//String payLoad = new String(Files.readAllBytes(Paths.get("src\\test\\resources\\payload\\createBookingPayload.json")));
+		//String payLoad = new String(Files.readAllBytes(Paths.get("src\\test\\resources\\datadriven\\payload\\createBookingPayload.json")));
 		request.body(payLoad);
 		request.contentType(ContentType.JSON);
 		response = request.post("/booking");
@@ -88,7 +88,7 @@ public class ApiStepDefinition {
 	
 	@Then("the response body should be as per schema {string}")
 	public void the_response_body_should_be_as_per_schema(String fileName) throws IOException, ProcessingException {
-	    File schema = new File("src\\test\\resources\\JsonSchema\\" + fileName);
+	    File schema = new File("src\\test\\resources\\datadriven\\JsonSchema\\" + fileName);
 	    ObjectMapper mapper = new ObjectMapper();
         JsonNode schemaNode = mapper.readTree(schema);
         JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
