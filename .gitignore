@@ -15,6 +15,10 @@ application.log
 *.war
 *.ear
 *.nar
+*.css
+*.html
+*.png
+*.js
 hs_err_pid*
 activityLog.log
 ##############################
