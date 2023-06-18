@@ -1,15 +1,18 @@
 @ui @regression
 Feature: Login page feature
 
+@login
 Scenario: Login page title
 Given user is on login page
 When user gets the title of the page
 Then page title should be "Login - My Shop"
 
+@login
 Scenario: Forgot Password link
 Given user is on login page
 Then forgot your password link should be displayed
 
+@login
 Scenario: Login with correct credentials
 Given user is on login page
 When user enters username "partha9595@gmail.com"
