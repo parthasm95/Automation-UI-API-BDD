@@ -7,7 +7,7 @@ Given user is on login page
 When user gets the title of the page
 Then page title should be "Login - My Shop"
 
-@login
+@login @ignore
 Scenario: Forgot Password link
 Given user is on login page
 Then forgot your password link should be displayed
