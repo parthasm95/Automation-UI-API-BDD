@@ -51,5 +51,15 @@ public class AccountsPageStepDefinition {
 	public void accounts_section_count_should_be(Integer expectedCount) {
 	    Assert.assertTrue(accountsPage.getAccountItemsCount() == expectedCount);
 	}
-
+	
+	@Then("Home Page icon should be visible")
+	public void home_page_icon_should_be_visible() {
+	    Assert.assertTrue(accountsPage.isHomeIconExist());
+	}
+	
+	@Then("user should be able to go to Home page by clicking home button")
+	public void user_should_be_able_to_go_to_home_page_by_clicking_home_button() {
+	    accountsPage.goToHomePage();
+	}
+	
 }

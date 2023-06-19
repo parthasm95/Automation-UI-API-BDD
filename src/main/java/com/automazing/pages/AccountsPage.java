@@ -14,6 +14,7 @@ public class AccountsPage {
 	
 	//By Locators
 	private By accountItems = By.cssSelector("div#center_column span");
+	private By homePageIcon = By.cssSelector(".icon-home");
 	
 		
 	//Page Class Constructor
@@ -41,6 +42,15 @@ public class AccountsPage {
 			System.out.println(text);
 		}
 		return accountsList;
+	}
+	
+	public Boolean isHomeIconExist() {
+		return driver.findElement(homePageIcon).isDisplayed();
+	}
+	
+	public HomePage goToHomePage() {
+		driver.findElement(homePageIcon).click();
+		return new HomePage(driver);
 	}
 
 }

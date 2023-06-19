@@ -7,13 +7,13 @@ Given user has already logged in to application
 |partha9595@gmail.com|Password@124|
 
 @accounts
-Scenario: Accounts page title
+Scenario: Verify Accounts page title
 Given user is on Accounts page
 When user gets the title of the page
 Then page title should be "My account - My Shop"
 
 @accounts
-Scenario: Accounts section count
+Scenario: Verify Accounts section count
 Given user is on Accounts page
 Then user gets accounts section
 |ADD MY FIRST ADDRESS|
@@ -23,3 +23,5 @@ Then user gets accounts section
 |MY PERSONAL INFORMATION|
 |Home|
 And accounts section count should be 6
+And Home Page icon should be visible
+And user should be able to go to Home page by clicking home button
